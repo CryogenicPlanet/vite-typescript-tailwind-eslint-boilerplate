@@ -1,0 +1,59 @@
+{
+  "name": "vite-typescript-tailwind-eslint",
+  "version": "1.0.0",
+  "author": "@CryogenicPlanet",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "prettier": "prettier --check **/*.ts*",
+    "prettier:fix": "prettier --write **/*.ts*",
+    "verify": "yarn prettier && yarn lint",
+    "verify:fix": "yarn prettier:fix && yarn lint:fix"
+  },
+  "dependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "@vitejs/plugin-react-refresh": "^1.3.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier-standard": "^3.0.1",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "prettier-config-standard": "^1.0.1",
+    "typescript": "^4.1.2",
+    "vite": "^2.3.4",
+    "vite-tsconfig-paths": "^3.3.12"
+  },
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier",
+      "pre-push": "yarn verify"
+    }
+  }
+}
